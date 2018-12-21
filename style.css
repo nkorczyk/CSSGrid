@@ -10,42 +10,31 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+    "header header header header header header header header"
+    ". . . . . . . ."
+    "content content content content content . sidebar sidebar"
+    "content content content content content . sidebar sidebar"
+    "content content content content content . sidebar sidebar"
+    "content content content content content . sidebar sidebar"
+    ". . . . . . . ."
+    "footer footer footer footer footer footer footer footer"
+    ;
 }
 
-.box1 {
-    grid-column: span 9 / 9;
+header {
+    grid-area: header;
 }
 
-.box2 {
-    grid-column: span 4 / 5;
-    grid-row: span 2 / 7;
+main {
+    grid-column: content-start / content-end;
+    grid-row: content-start / content-end;
 }
 
-.box3 {
-    grid-column: span 2 / 8;
-    grid-row: span 4 / 7
+aside {
+    grid-area: sidebar;
 }
 
-.box4 {
-    grid-column: span 7 / 9;
-    grid-row: 8;
+footer {
+    grid-area: footer;
 }
-
-/* .box1 {
-    grid-column: 1 / 9;
-}
-
-.box2 {
-    grid-column: 2 / span 2;
-    grid-row: 3 / span 4;
-}
-
-.box3 {
-    grid-column: span 4 / 9; 
-    grid-row: span 2 / 7;
-}
-
-.box4 {
-    grid-column: 1 / 8;
-    grid-row: 8;
-} */
